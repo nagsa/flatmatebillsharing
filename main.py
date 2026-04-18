@@ -1,5 +1,5 @@
 from house import Bill, Flatmate
-from reports import PdfReport
+from reports import PdfReport, filesharer
 
 input_billamt=float(input("Greetings, Please Enter Total Bill Amount : "))
 input_billperiod=input("Please Enter Bill Period in Month YYYY format : ")
@@ -17,3 +17,7 @@ print(f"{input_flatmate2} pays : ",person2.pays(bill=the_bill,flatmate2=person1)
 
 pdfreport= PdfReport(filename=f"{the_bill.period}.pdf")
 pdfreport.generate(flatmate1=person1, flatmate2=person2, bill=the_bill)
+
+#fileshare=filesharer(pdfreport.filename)
+#print(fileshare.share())
+print(filesharer(pdfreport.filename).share())
